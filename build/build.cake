@@ -44,10 +44,10 @@ Teardown(() =>
 ///////////////////////////////////////////////////////////////////////////////
 
 Task("BuildSolution")
-    .Description("Builds Cake.Daploy.Azure.Management.WebSites")
+    .Description("Builds Cake.Deploy.Azure.Management.WebSites")
     .Does(() =>
 {
-    var solution = sourceDir + "\\Cake.Daploy.Azure.Management.WebSites.sln";
+    var solution = sourceDir + "\\Cake.Deploy.Azure.Management.WebSites.sln";
 
     NuGetRestore(solution);
 
@@ -62,7 +62,7 @@ Task("NuGet")
     .Description("Create nuget package")
     .Does(()=>
 {
-    var projectFile = sourceDir + "\\Cake.Daploy.Azure.Management.WebSites.csproj";
+    var projectFile = sourceDir + "\\Cake.Deploy.Azure.Management.WebSites.csproj";
 
     var nuGetPackSettings   = new NuGetPackSettings {
         OutputDirectory = outputDir,

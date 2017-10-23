@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Cake addin to get Azure WebApp Publishing Credentials.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ObjectivityLtd")]
-[assembly: AssemblyProduct("Cake.Daploy.Azure.Management.WebSites")]
+[assembly: AssemblyProduct("Cake.Deploy.Azure.Management.WebSites")]
 [assembly: AssemblyCopyright("Objectivity Bespoke Software Specialists, MIT license")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
