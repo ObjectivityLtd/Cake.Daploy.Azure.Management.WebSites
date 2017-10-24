@@ -1,4 +1,4 @@
-namespace Cake.Daploy.Azure.Management.WebSites
+namespace Cake.Deploy.Azure.Management.WebSites
 {
     using Cake.Core;
     using Cake.Core.Annotations;

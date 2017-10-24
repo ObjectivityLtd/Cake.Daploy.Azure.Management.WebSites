@@ -44,10 +44,10 @@ Teardown(() =>
 ///////////////////////////////////////////////////////////////////////////////
 
 Task("BuildSolution")
-    .Description("Builds Cake.Daploy.Azure.Management.WebSites")
+    .Description("Builds Cake.Deploy.Azure.Management.WebSites")
     .Does(() =>
 {
-    var solution = sourceDir + "\\Cake.Daploy.Azure.Management.WebSites.sln";
+    var solution = sourceDir + "\\Cake.Deploy.Azure.Management.WebSites.sln";
 
     NuGetRestore(solution);
 
@@ -62,21 +62,14 @@ Task("NuGet")
     .Description("Create nuget package")
     .Does(()=>
 {
-    var packagePath = outputDir;
-
-    if(!DirectoryExists(packagePath))
-    {
-        CreateDirectory(packagePath);
-    }
-
-    var nuspecFile = sourceDir + "\\Cake.Deploy.Azure.Management.WebSites.nuspec";
+    var projectFile = sourceDir + "\\Cake.Deploy.Azure.Management.WebSites.csproj";
 
     var nuGetPackSettings   = new NuGetPackSettings {
-        BasePath        = sourceDir + "\\bin\\Release\\",
-        OutputDirectory = packagePath
+        OutputDirectory = outputDir,
+        Properties = new Dictionary<string,string>{ {"Configuration", configuration} }
     };
 
-    NuGetPack(nuspecFile, nuGetPackSettings);
+    NuGetPack(projectFile, nuGetPackSettings);
 });
 
 ///////////////////////////////////////////////////////////////////////////////
