@@ -13,4 +13,7 @@
         <copyright>$copyright$</copyright>
         <tags>Cake Deploy Azure Management WebSites Deployment</tags>
     </metadata>
+    <files>
+        <file src="bin\$configuration$\Microsoft.Azure.Management.Websites.dll" target="lib\net461\" />
+    </files>
 </package>
