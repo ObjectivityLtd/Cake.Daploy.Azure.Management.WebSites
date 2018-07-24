@@ -34,5 +34,16 @@ namespace Cake.Deploy.Azure.Management.WebSites
 
             return retUser;
         }
+
+        [CakeMethodAlias]
+        public static void SwapSlotSlot(this ICakeContext ctx, ServiceClientCredentials credentials, string subscriptionId, string resourceGroupName, string websiteName, string srcSlot, string destSlot, bool preserveVnet)
+        {
+            var client = new WebSiteManagementClient(credentials)
+            {
+                SubscriptionId = subscriptionId
+            };
+
+            client.WebApps.SwapSlotSlot(resourceGroupName, websiteName, new CsmSlotEntity(destSlot, preserveVnet), srcSlot);
+        }
     }
 }
