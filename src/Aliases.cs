@@ -43,7 +43,7 @@ namespace Cake.Deploy.Azure.Management.WebSites
                 SubscriptionId = subscriptionId
             };
 
-            client.WebApps.SwapSlotSlot(resourceGroupName, websiteName, new CsmSlotEntity(destSlot, false), srcSlot);
+            client.WebApps.SwapSlotSlot(resourceGroupName, websiteName, new CsmSlotEntity(destSlot, preserveVnet), srcSlot);
         }
     }
 }
