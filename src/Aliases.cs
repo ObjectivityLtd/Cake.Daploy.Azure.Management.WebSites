@@ -6,10 +6,11 @@ namespace Cake.Deploy.Azure.Management.WebSites
     using Microsoft.Azure.Management.WebSites.Models;
     using Microsoft.Rest;
 
-    [CakeAliasCategory("Sample")]
+    [CakeAliasCategory("Azure")]
     public static class AddinAliases
     {
         [CakeMethodAlias]
+        [CakeAliasCategory("Azure WebApp")]
         public static User GetPublishingCredentials(this ICakeContext ctx, ServiceClientCredentials credentials, string subscriptionId, string resourceGroupName, string websiteName)
         {
             var client = new WebSiteManagementClient(credentials)
@@ -23,6 +24,7 @@ namespace Cake.Deploy.Azure.Management.WebSites
         }
 
         [CakeMethodAlias]
+        [CakeAliasCategory("Azure WebApp")]
         public static User GetPublishingCredentialsSlot(this ICakeContext ctx, ServiceClientCredentials credentials, string subscriptionId, string resourceGroupName, string websiteName, string slot)
         {
             var client = new WebSiteManagementClient(credentials)
@@ -36,6 +38,7 @@ namespace Cake.Deploy.Azure.Management.WebSites
         }
 
         [CakeMethodAlias]
+        [CakeAliasCategory("Azure WebApp")]
         public static void SwapSlotSlot(this ICakeContext ctx, ServiceClientCredentials credentials, string subscriptionId, string resourceGroupName, string websiteName, string srcSlot, string destSlot, bool preserveVnet)
         {
             var client = new WebSiteManagementClient(credentials)
